@@ -12,7 +12,7 @@ The graph types so far:
 * mycielski
 * sudoku
 
-Graphs are generate with **matplotlib**
+Graphs are generate with **networkx** and are visualise with **matplotlib**.
 
 ![img.png](images/img.png "Example graph")
 <br/>_Example graph_
