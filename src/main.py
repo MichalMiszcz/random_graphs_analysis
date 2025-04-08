@@ -46,30 +46,30 @@ def main():
         graph_metrics = analyze_graph(g, folder_path, graph_type)
         graph_metrics_r = analyze_graph_resistance(g, folder_path, graph_type)
 
-        metrics = {"Typ grafu": graph_type}
+        metrics = {"Graph's type": graph_type}
         metrics.update(graph_metrics)
         data_about_graphs.append(metrics)
 
-        metrics_r = {"Typ grafu": graph_type}
+        metrics_r = {"Graph's type": graph_type}
         metrics_r.update(graph_metrics_r)
         data_about_graphs_resistence.append(metrics_r)
 
-    columns = ["Typ grafu", "Liczba wierzchołków", "Liczba krawędzi", "Średnia najkrótsza ścieżka",
-               "Średnica", "Średnia centralność stopnia", "Średni współczynnik gronowania"]
+    columns = ["Graph's type", "Nodes number", "Edges number", "Average shortest path",
+               "Diameter", "Average degree centrality", "Average clustering"]
     df = pd.DataFrame(data_about_graphs, columns=columns)
     df_resistence = pd.DataFrame(data_about_graphs_resistence, columns=columns)
 
-    print("\nDataFrame z miarami grafów:")
+    print("\nDataFrame with graphs measures:")
     print(df)
 
-    print("\nDataFrame z zmienionymi miarami grafów po usunięciu niektórych wierzchołków:")
+    print("\nDataFrame with graphs measures after deleting some of nodes:")
     print(df_resistence)
 
     df.to_csv("graph_analysis.csv", index=False)
-    print("\nZapisano dane do pliku 'graph_analysis.csv'")
+    print("\nData saved to 'graph_analysis.csv'")
 
     df_resistence.to_csv("graph_resistence_analysis.csv", index=False)
-    print("\nZapisano dane do pliku 'graph_resistence_analysis.csv'")
+    print("\nData saved to 'graph_resistence_analysis.csv'")
 
 
 if __name__ == "__main__":
